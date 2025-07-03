@@ -1,0 +1,27 @@
+# Version control
+.git
+
+# Dependencies
+node_modules
+
+# Build output & cache
+dist
+build
+coverage
+.nyc_output
+
+# Logs
+*.log
+
+# Environment files
+.env
+.env.*
+
+# Misc
+.DS_Store
+.idea
+.vscode
+*.local
+*.swp
+postman_collection.json
+uploads

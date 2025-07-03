@@ -1,0 +1,1156 @@
+{
+	"info": {
+		"_postman_id": "3399708d-96f1-429d-bfc1-e76f8b8f6a7b",
+		"name": "Simple RAG API Collection",
+		"description": "Postman collection for testing Simple RAG API endpoints.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23687279"
+	},
+	"item": [
+		{
+			"name": "Ingest Document (File)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "docId",
+							"value": "doc-file-001",
+							"type": "text"
+						},
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Programming/test.txt"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/rag/sample_collection/ingest/file",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"rag",
+						"sample_collection",
+						"ingest",
+						"file"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Ingest Document (File)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "docId",
+									"value": "doc-file-001",
+									"type": "text"
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Programming/test.txt"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/rag/sample_collection/ingest/file",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"rag",
+								"sample_collection",
+								"ingest",
+								"file"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "174"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"ae-aPTonq6QGvhKaUQbyk+eyP0gZkk\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 03 Jul 2025 14:34:02 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Document file C:\\\\Programming\\\\simple-rag-api\\\\uploads\\\\test-1751553242000.txt ingested successfully\",\n    \"docId\": \"doc-file-001\",\n    \"collectionName\": \"sample_collection\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Document",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"text\": {\n        \"question\": \"Sidik pegawai apa ?\",\n        \"answer\": \"Karyawan di PT ILCS\"\n    },\n    \"docId\": \"doc-text-001\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/rag/sample_collection/documents/:docId",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"rag",
+						"sample_collection",
+						"documents",
+						":docId"
+					],
+					"variable": [
+						{
+							"key": "docId",
+							"value": "doc-text-001"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Update Document",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"text\": {\n        \"question\": \"Sidik pegawai apa ?\",\n        \"answer\": \"Karyawan di PT ILCS\"\n    },\n    \"docId\": \"doc-text-001\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/rag/sample_collection/documents/:docId",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"rag",
+								"sample_collection",
+								"documents",
+								":docId"
+							],
+							"variable": [
+								{
+									"key": "docId",
+									"value": "doc-text-001"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "104"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"68-uqop2iYUFgiiMzM7e6H82KdCoGc\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 03 Jul 2025 14:16:19 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Document upserted successfully\",\n    \"docId\": \"doc-text-001\",\n    \"collectionName\": \"sample_collection\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Ingest Document (Text)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"text\": \"Sidik adalah mahasiswa Universitas Siber Asia yang juga bekerja sebagai pegawai Pelindo Solusi Digital\",\n    \"docId\": \"doc-text-001\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/rag/sample_collection/ingest/text",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"rag",
+						"sample_collection",
+						"ingest",
+						"text"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Ingest Document (Object)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"text\": {\n        \"question\": \"Sidik pegawai apa ?\",\n        \"answer\": \"Karyawan di PT ILCS\"\n    },\n    \"docId\": \"doc-text-001\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/rag/sample_collection/ingest/text",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"rag",
+								"sample_collection",
+								"ingest",
+								"text"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "109"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"6d-PNq4jocK+YgO5x0XEiqhdrYTF5A\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 03 Jul 2025 14:09:02 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Document text ingested successfully\",\n    \"docId\": \"doc-text-001\",\n    \"collectionName\": \"sample_collection\"\n}"
+				},
+				{
+					"name": "Ingest Document (Text)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"text\": \"Sidik adalah mahasiswa Universitas Siber Asia yang juga bekerja sebagai pegawai Pelindo Solusi Digital\",\n    \"docId\": \"doc-text-001\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/rag/sample_collection/ingest/text",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"rag",
+								"sample_collection",
+								"ingest",
+								"text"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "109"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"6d-PNq4jocK+YgO5x0XEiqhdrYTF5A\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 03 Jul 2025 14:40:52 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [
+						{
+							"expires": "Invalid Date"
+						}
+					],
+					"body": "{\n    \"message\": \"Document text ingested successfully\",\n    \"docId\": \"doc-text-001\",\n    \"collectionName\": \"sample_collection\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete Document",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5000/api/rag/sample_collection/documents/:docId",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"rag",
+						"sample_collection",
+						"documents",
+						":docId"
+					],
+					"variable": [
+						{
+							"key": "docId",
+							"value": "doc-text-001"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete Document",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/rag/sample_collection/documents/:docId",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"rag",
+								"sample_collection",
+								"documents",
+								":docId"
+							],
+							"variable": [
+								{
+									"key": "docId",
+									"value": "doc-text-001"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "103"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"67-BDTez3YjPbb018BHKyrJbz5a8hM\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 03 Jul 2025 14:13:12 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Document deleted successfully\",\n    \"docId\": \"doc-text-001\",\n    \"collectionName\": \"sample_collection\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Ask Question",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"question\": \"siapa sidik ?\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/rag/sample_collection/ask",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"rag",
+						"sample_collection",
+						"ask"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Ask Question",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"question\": \"Siapa Sidik ?\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/rag/sample_collection/ask",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"rag",
+								"sample_collection",
+								"ask"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "380"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"17c-99hQHzL5fsvqKWF3oRprJJe7K0s\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 02 Jul 2025 17:28:42 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"answer\": \"Sidik adalah mahasiswa Universitas Siber Asia yang juga bekerja sebagai pegawai Pelindo Solusi Digital.\\n\",\n    \"references\": [\n        {\n            \"docId\": \"doc-text-001\",\n            \"metadata\": {\n                \"docId\": \"doc-text-001\",\n                \"loc\": {\n                    \"lines\": {\n                        \"from\": 1,\n                        \"to\": 1\n                    }\n                }\n            },\n            \"preview\": \"Sidik adalah mahasiswa Universitas Siber Asia yang juga bekerja sebagai pegawai Pelindo Solusi Digital\"\n        }\n    ],\n    \"collectionName\": \"sample_collection\"\n}"
+				},
+				{
+					"name": "Greetings",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"question\": \"Halo\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/rag/sample_collection/ask",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"rag",
+								"sample_collection",
+								"ask"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "308"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"134-mYkf9dw3gPJNem6iu0Ljkjp1x78\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 02 Jul 2025 17:31:41 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"answer\": \"Halo! Ada yang bisa saya bantu?\\n\",\n    \"references\": [\n        {\n            \"docId\": \"doc-text-001\",\n            \"metadata\": {\n                \"docId\": \"doc-text-001\",\n                \"loc\": {\n                    \"lines\": {\n                        \"from\": 1,\n                        \"to\": 1\n                    }\n                }\n            },\n            \"preview\": \"Sidik adalah mahasiswa Universitas Siber Asia yang juga bekerja sebagai pegawai Pelindo Solusi Digital\"\n        }\n    ],\n    \"collectionName\": \"sample_collection\"\n}"
+				},
+				{
+					"name": "Thanks Expression",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"question\": \"Haturnuhun mang\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/rag/sample_collection/ask",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"rag",
+								"sample_collection",
+								"ask"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "309"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"135-7S/u2FfFpa6Z8wl2IpGZvml/jiY\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 02 Jul 2025 17:32:06 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"answer\": \"Sami-sami, wilujeng tepang deui!\\n\",\n    \"references\": [\n        {\n            \"docId\": \"doc-text-001\",\n            \"metadata\": {\n                \"docId\": \"doc-text-001\",\n                \"loc\": {\n                    \"lines\": {\n                        \"from\": 1,\n                        \"to\": 1\n                    }\n                }\n            },\n            \"preview\": \"Sidik adalah mahasiswa Universitas Siber Asia yang juga bekerja sebagai pegawai Pelindo Solusi Digital\"\n        }\n    ],\n    \"collectionName\": \"sample_collection\"\n}"
+				},
+				{
+					"name": "No Konteks",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"question\": \"Bagaimana cara menguasai dunia ?\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/rag/sample_collection/ask",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"rag",
+								"sample_collection",
+								"ask"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "344"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"158-8vUqSK0UxHgnAY6AB+R0WC4APiw\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 02 Jul 2025 17:33:34 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"answer\": \"Maaf, saya tidak menemukan informasi mengenai itu di dalam dokumen.\\n\",\n    \"references\": [\n        {\n            \"docId\": \"doc-text-001\",\n            \"metadata\": {\n                \"docId\": \"doc-text-001\",\n                \"loc\": {\n                    \"lines\": {\n                        \"from\": 1,\n                        \"to\": 1\n                    }\n                }\n            },\n            \"preview\": \"Sidik adalah mahasiswa Universitas Siber Asia yang juga bekerja sebagai pegawai Pelindo Solusi Digital\"\n        }\n    ],\n    \"collectionName\": \"sample_collection\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Health Check",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000"
+				}
+			},
+			"response": [
+				{
+					"name": "Health Check",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000"
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "39"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"27-IHCMZI7TpPwWPGMr/CiJhqFgGKY\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 02 Jul 2025 17:33:00 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Simple RAG API is running\"\n}"
+				}
+			]
+		},
+		{
+			"name": "List Documents",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/rag/sample_collection/documents",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"rag",
+						"sample_collection",
+						"documents"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "List Documents",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/rag/sample_collection/documents",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"rag",
+								"sample_collection",
+								"documents"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "756"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2f4-Ug00CV04RxO/TMP5sKcP/Ejt89g\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 03 Jul 2025 15:44:59 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"documents\": [\n        {\n            \"docId\": \"doc-file-001\",\n            \"metadata\": {\n                \"source\": \"C:\\\\Programming\\\\simple-rag-api\\\\uploads\\\\test-1751553242000-1751557220529.txt\",\n                \"loc\": {\n                    \"lines\": {\n                        \"from\": 1,\n                        \"to\": 3\n                    }\n                },\n                \"docId\": \"doc-file-001\"\n            },\n            \"id\": \"71b35d8e-fffc-4dcc-9d8e-260bd1481e96\",\n            \"preview\": \"Hello! 👋 I'm a Fullstack Developer with a focus on Backend Development. I have expertise in Golang, Node.js, Rest API development, and managing SQL databases like MySQL, PostgreSQL, and Oracle. Docke...\"\n        },\n        {\n            \"docId\": \"doc-text-001\",\n            \"metadata\": {\n                \"docId\": \"doc-text-001\",\n                \"loc\": {\n                    \"lines\": {\n                        \"from\": 1,\n                        \"to\": 1\n                    }\n                }\n            },\n            \"id\": \"f975af21-b7ab-4d3c-8f4d-5b28869cbc59\",\n            \"preview\": \"Sidik adalah mahasiswa Universitas Siber Asia yang juga bekerja sebagai pegawai Pelindo Solusi Digital...\"\n        }\n    ],\n    \"collectionName\": \"sample_collection\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Document By DocId",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/rag/sample_collection/documents/:docId",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"rag",
+						"sample_collection",
+						"documents",
+						":docId"
+					],
+					"variable": [
+						{
+							"key": "docId",
+							"value": "doc-file-001"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Document By DocId",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/rag/sample_collection/documents/:docId",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"rag",
+								"sample_collection",
+								"documents",
+								":docId"
+							],
+							"variable": [
+								{
+									"key": "docId",
+									"value": "doc-file-001"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1440"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"5a0-okdC9XmrmDejrya5SLZ83rn+trw\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 03 Jul 2025 16:04:25 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 200,\n    \"document\": {\n        \"docId\": \"doc-file-001\",\n        \"metadata\": {\n            \"source\": \"C:\\\\Programming\\\\simple-rag-api\\\\uploads\\\\test-1751553242000-1751557220529.txt\",\n            \"loc\": {\n                \"lines\": {\n                    \"from\": 1,\n                    \"to\": 3\n                }\n            },\n            \"docId\": \"doc-file-001\"\n        },\n        \"id\": \"71b35d8e-fffc-4dcc-9d8e-260bd1481e96\",\n        \"preview\": \"Hello! 👋 I'm a Fullstack Developer with a focus on Backend Development. I have expertise in Golang, Node.js, Rest API development, and managing SQL databases like MySQL, PostgreSQL, and Oracle. Docke...\",\n        \"chunks\": [\n            {\n                \"id\": \"71b35d8e-fffc-4dcc-9d8e-260bd1481e96\",\n                \"metadata\": {\n                    \"source\": \"C:\\\\Programming\\\\simple-rag-api\\\\uploads\\\\test-1751553242000-1751557220529.txt\",\n                    \"loc\": {\n                        \"lines\": {\n                            \"from\": 1,\n                            \"to\": 3\n                        }\n                    },\n                    \"docId\": \"doc-file-001\"\n                },\n                \"pageContent\": \"Hello! 👋 I'm a Fullstack Developer with a focus on Backend Development. I have expertise in Golang, Node.js, Rest API development, and managing SQL databases like MySQL, PostgreSQL, and Oracle. Docker? Yes, I'm proficient in that too! I have a wide range of experiences, like building Rest APIs with Golang and developing real-time applications using ReactJS, Node.js, and Socket.IO. I'm also passionate about contributing to the developer community by creating open-source packages for Golang application development.\\r\\n\\r\\nI enjoy finding innovative solutions and have a strong track record in Backend development. I'm ready to take on challenging projects and make a meaningful impact. 🚀\"\n            }\n        ]\n    },\n    \"collectionName\": \"sample_collection\"\n}"
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "value",
+				"value": "{{apiKey}}",
+				"type": "string"
+			},
+			{
+				"key": "key",
+				"value": "x-api-key",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "apiKey",
+			"value": "",
+			"type": "default"
+		}
+	]
+}
