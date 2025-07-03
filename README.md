@@ -203,12 +203,6 @@ Import `postman_collection.json` into Postman to try all endpoints.
 
 Contributions are welcome! Please open an issue or submit a pull request for improvements or bug fixes.
 
-## Author
-
-- **Name:** [Ahmad Sidik Rudini]
-- **GitHub:** [asidikrdn]
-- **Email:** [sidikrudini16@gmail.com]
-
 ## License
 
 [ISC License](LICENSE.md)
