@@ -25,7 +25,6 @@ A simple Retrieval-Augmented Generation (RAG) API using Gemini, LangChain, and Q
 - [Error Handling](#error-handling)
 - [Postman Collection](#postman-collection)
 - [Contributing](#contributing)
-- [Author](#author)
 - [License](#license)
 
 ## Project Structure
